@@ -24,4 +24,16 @@ arr.forEach(button => {
     });
 });
 
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Backspace') {
+        string = string.substring(0, string.length - 1);
+        input.value = string; // Update input field here
+        e.preventDefault(); // Prevent default backspace behavior
+    } else if (e.key === 'Enter') {
+        string = eval(string);
+        input.value = string;
+        e.preventDefault(); // Prevent default enter behavior
+    }
+});
+
 
